@@ -1,4 +1,4 @@
-export default async function callGptApi(text) {
+export default async function callGptApi(text: string) {
 
   const prompt = "Please use the language of the following content and generate a response using stories or words from the Holy Bible"
 

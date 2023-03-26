@@ -10,7 +10,7 @@ export default function Home() {
   const [inputText, setInputText] = useState('');
   const [displayText, setDisplayText] = useState('');
 
-  const handleSubmitClient = async (event) => {
+  const handleSubmitClient = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (typeof text === "undefined" || text === "") {
       return;
@@ -21,16 +21,16 @@ export default function Home() {
     setText('');
   };
 
-  // const handleSubmitTest = async (event) => {
-  //   event.preventDefault();
-  //   if (typeof text === "undefined" || text === "") {
-  //     return;
-  //   }
-  //   setInputText(text);
-  //   const answer = "Dear friend, I am sorry to hear that you lost your job. I know it can be a difficult and uncertain time, but please remember that you are not alone. In the Bible, we see many stories of people facing difficult times and overcoming them with faith and perseverance. One of my favorite stories is that of Joseph in the book of Genesis. Joseph was sold into slavery by his own brothers and faced many trials and hardships, including being falsely accused and thrown into prison. But through it all, he remained faithful to God and trusted in His plan. Eventually, Joseph was able to interpret Pharaoh's dreams and was appointed as second in command of all of Egypt. Through his faith and perseverance, Joseph was able to overcome his difficult circumstances and thrive. I encourage you to take heart in this story and in the many other examples of perseverance and faith in the Bible. Remember that God is with you always, and He has a plan for your life. Trust in Him, and He will guide you through this difficult time.";
-  //   setDisplayText(answer);
-  //   setText('');
-  // };
+  const handleSubmitTest = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (typeof text === "undefined" || text === "") {
+      return;
+    }
+    setInputText(text);
+    const answer = "Dear friend, I am sorry to hear that you lost your job. I know it can be a difficult and uncertain time, but please remember that you are not alone. In the Bible, we see many stories of people facing difficult times and overcoming them with faith and perseverance. One of my favorite stories is that of Joseph in the book of Genesis. Joseph was sold into slavery by his own brothers and faced many trials and hardships, including being falsely accused and thrown into prison. But through it all, he remained faithful to God and trusted in His plan. Eventually, Joseph was able to interpret Pharaoh's dreams and was appointed as second in command of all of Egypt. Through his faith and perseverance, Joseph was able to overcome his difficult circumstances and thrive. I encourage you to take heart in this story and in the many other examples of perseverance and faith in the Bible. Remember that God is with you always, and He has a plan for your life. Trust in Him, and He will guide you through this difficult time.";
+    setDisplayText(answer);
+    setText('');
+  };
 
 
   // const handleSubmitStream = async (event) => {
