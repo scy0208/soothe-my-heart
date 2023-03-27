@@ -68,7 +68,7 @@ export default function Home() {
 
   return (
   <div className="w-full h-screen flex flex-col items-center bg-vision bg-no-repeat bg-center bg-cover grid grid-cols-10">
-    <div className="flex bg-black/50 flex-col p-3 py-3 rounded-lg text-white col-start-2 col-span-8  xl:col-start-4 xl:col-span-4">
+    <div className="flex bg-black/50 flex-col p-3 py-3 rounded-lg text-white col-start-2 col-span-8  xl:col-start-3 xl:col-span-6">
       <form onSubmit={handleSubmitStream} className="w-full max-w-screen-lg">
         <div className="flex items-center border-b border-b-2 border-teal-500 py-1">
           <input
