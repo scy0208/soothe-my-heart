@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'vision': "url('./static/DSC_1761.jpg')",
+      }
+    },
   },
   plugins: [],
 }
