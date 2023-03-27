@@ -67,27 +67,27 @@ export default function Home() {
 
 
   return (
-  <div className="w-full h-screen flex flex-col items-center bg-vision bg-no-repeat bg-center bg-cover grid grid-cols-8">
-    <div className="flex bg-black/50 flex-col p-8 py-3 rounded-lg text-white col-start-2 col-span-6 xl:col-start-3 xl:col-span-4">
+  <div className="w-full h-screen flex flex-col items-center bg-vision bg-no-repeat bg-center bg-cover grid grid-cols-10">
+    <div className="flex bg-black/50 flex-col p-3 py-3 rounded-lg text-white col-start-2 col-span-8  xl:col-start-4 xl:col-span-4">
       <form onSubmit={handleSubmitStream} className="w-full max-w-screen-lg">
-        <div className="flex items-center border-b border-b-2 border-teal-500 py-2">
+        <div className="flex items-center border-b border-b-2 border-teal-500 py-1">
           <input
             type="text"
             value={text}
             onChange={(event) => setText(event.target.value)}
-            className="appearance-none bg-transparent border-none w-full py-1 px-2 leading-tight focus:outline-none resize-none overflow-hidden break-all"
-            placeholder="Write down the burden in your heart here. 在此放下你心中的重担吧"
+            className="appearance-none bg-transparent border-none w-full py-1 px-2 sm:px-0 leading-tight focus:outline-none resize-none overflow-hidden break-all text-xs md:text-s lg:text-base xl:text-xl"
+            placeholder="Write down the burden here. 在此放下你心中的重担吧"
           />
           <button
             type="submit"
-            className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+            className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-xs md:text-s lg:text-base xl:text-xl border-4 text-white py-1 px-2 rounded"
           >
             Let go
           </button>
         </div>
       </form>
       {displayText && (
-        <div className="flex items-center justify-center border-b-2 border-teal-500 w-full max-w-screen-lg text-2xl italic">
+        <div className="flex items-center justify-center border-b-2 border-teal-500 w-full max-w-screen-lg text-s lg:text-xl xl:text-2xl italic">
           <p>{displayText}</p>
         </div>
       )}
