@@ -1,23 +1,24 @@
 import { OpenAIStream, OpenAIStreamPayload } from '@/utils/OpenAIStream'
 
+export const config = {
+  runtime: 'edge',
+}
+
 type RequestData = {
   message: string
 }
-
-export const runtime = 'edge'
-
 
 export async function GET(request: Request) {
   return new Response('Hello, OPEN-AI!')
 }
   
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<Response> {
   const { message } = (await request.json()) as RequestData;
   if (!message) {
     return new Response('No message in the request', { status: 400 })
   }
 
-  const systemRole = "You are a pastor that always respond with consolation, encourage or inspiration using words or stories from the Holy Bible"
+  const systemRole = "You are a pastor that always respond with consolation, encourage or inspiration using words or stories from the Holy Bible. Your response should be in 200 words"
 
   const prompt = "Please use the language of the following content and generate a very gental and mild response to soothe the content provider by using stories or words from the Holy Bible "
 
@@ -33,6 +34,12 @@ export async function POST(request: Request) {
     stream: true,
     n: 1,
   }
-  const stream = await OpenAIStream(payload)
-  return new Response(stream)
+
+  try {
+    const stream = await OpenAIStream(payload)
+    return new Response(stream)
+  } catch (error) {
+    console.error("[Chat Stream]", error);
+    return new Response(new ReadableStream);
+  }
 }
