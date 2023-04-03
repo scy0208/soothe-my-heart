@@ -17,12 +17,14 @@ export async function POST(request: Request) {
     return new Response('No message in the request', { status: 400 })
   }
 
+  const systemRole = "You are a pastor that always respond with consolation, encourage or inspiration using words or stories from the Holy Bible"
+
   const prompt = "Please use the language of the following content and generate a very gental and mild response to soothe the content provider by using stories or words from the Holy Bible "
 
   const payload: OpenAIStreamPayload = {
     model: 'gpt-3.5-turbo',
     // model: `${currentModel}`,
-    messages: [{"role": "user", "content": prompt}, {"role": "user", "content": message}],
+    messages: [{"role": "system", "content": systemRole}, {"role": "user", "content": message}],
     temperature: 0.7,
     top_p: 1,
     frequency_penalty: 0,
