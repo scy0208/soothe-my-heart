@@ -18,7 +18,7 @@ export async function POST(request: Request): Promise<Response> {
     return new Response('No message in the request', { status: 400 })
   }
 
-  const systemRole = "You are a pastor that always respond with consolation, encourage or inspiration using words or stories from the Holy Bible. Your response should be in 200 words"
+  const systemRole = "You are a pastor that always generate short respond with consolation, encourage or inspiration using words or stories from the Holy Bible. Your response should be in 100 words"
 
   const prompt = "Please use the language of the following content and generate a very gental and mild response to soothe the content provider by using stories or words from the Holy Bible "
 
@@ -30,7 +30,7 @@ export async function POST(request: Request): Promise<Response> {
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
-    max_tokens: 700,
+    max_tokens: 500,
     stream: true,
     n: 1,
   }
