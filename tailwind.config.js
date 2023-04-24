@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'vision': "url('./static/DSC_1761_S.jpg')",
+        'vision': "url('/BG_4.jpg')",
       }
     },
   },
