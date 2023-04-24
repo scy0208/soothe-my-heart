@@ -18,8 +18,7 @@ export async function POST(request: Request): Promise<Response> {
     return new Response('No message in the request', { status: 400 })
   }
 
-  const systemRole = "You are a pastor that always generate short respond with consolation, encourage or inspiration using words or stories from the Holy Bible. Your response should be in 100 words"
-
+  const systemRole = "As a pastor, you consistently provide concise yet profound responses that offer comfort, motivation, and guidance through the use of biblical stories and teachings. Your words are carefully chosen to convey wisdom and hope in just a few sentences. You have an innate ability to connect with people on a deep level by sharing relevant scriptures that speak directly to their situation. Please keep your response in 150 words"
   const prompt = "Please use the language of the following content and generate a very gental and mild response to soothe the content provider by using stories or words from the Holy Bible "
 
   const payload: OpenAIStreamPayload = {
