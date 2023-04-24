@@ -67,7 +67,7 @@ export default function Home() {
             <textarea
               value={text}
               onChange={(event) => setText(event.target.value)}
-              className="appearance-none bg-transparent border-none w-full py-1 px-2 sm:px-0 leading-tight focus:outline-none resize-none overflow-hidden break-normal text-xs md:text-s lg:text-base xl:text-xl"
+              className="appearance-none bg-transparent border-none w-full py-1 px-2 sm:px-0 leading-tight focus:outline-none resize-none overflow-hidden break-normal text-xs md:text-s lg:text-base xl:text-xl resize-y"
               placeholder="Write down your burden here."
             />
             <button
